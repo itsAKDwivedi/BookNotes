@@ -15,12 +15,12 @@ To run the Book Notes Website locally on your machine, follow these steps:
 
 1. **Clone the repository:**
    ```
-   git clone https://github.com/your-username/book-notes-website.git
+   git clone [https://github.com/itsAKDwivedi/BookNotes](https://github.com/itsAKDwivedi/BookNotes)
    ```
 
 2. **Navigate to the project directory:**
    ```
-   cd book-notes-website
+   cd BookNotes
    ```
 
 3. **Install dependencies:**
