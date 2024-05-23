@@ -1,0 +1,138 @@
+<%- include('./partials/form-header.ejs') %>
+
+      <form method="post" action="/add" class="p-2 needs-validation" novalidate>
+        <div class="row g-5">
+          <div class="col-md-5 col-lg-4 order-md-last">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-secondary rounded-pill">Generate book thumbnail !</span>
+            </h4>
+            <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <small class="text-body-secondary">Step: 1</small>
+                  <h6 class="my-0">Open Library Website</h6>
+                </div>
+                <a href="https://openlibrary.org/" class="tip text-body-secondary" target="_blank">Click</a>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Search for desired book</h6>
+                  <small class="text-body-secondary">Step: 2</small>
+                </div>
+                <a href="./resources/tip2.png" class="tip text-body-secondary" target="_blank">Hint</a>
+
+
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-sm">
+                <div>
+                  <h6 class="my-0">Copy available ISBN code</h6>
+                  <small class="text-body-secondary">Step: 3</small>
+                </div>
+                <a href="./resources/tip3.png" class="tip text-body-secondary" target="_blank">Hint</a>
+              </li>
+            </ul>
+
+          
+            <div class="input-group">
+                <input name="isbn" id="isbn" type="text" class="form-control" placeholder="ISBN code" required>
+                <div class="invalid-feedback">
+                  Valid ISBN code is required for book thumbnail.
+                </div>
+                <button type="button" class="btn btn-secondary" id="add-thumbnail">Check Thumbnail</button>
+              </div>
+              <img src="" class="add-thumbnail" id="add-img" alt="">
+            </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Book Details</h4>
+          
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="bname" class="form-label">Book name</label>
+                <input type="text" class="form-control" id="bname" placeholder="" name="bname" autocomplete="off" required>
+                <div class="invalid-feedback">
+                  Valid Book name is required.
+                </div>
+              </div>
+
+              <div class="col-sm-6">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" placeholder="" name="author" autocomplete="off" required>
+                <div class="invalid-feedback">
+                  Valid author name is required.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Book intro</label>
+                <textarea class="form-control intro-text" id="intro" name="intro" placeholder="Write short intro here..." autocomplete="off" required></textarea>
+                <div class="invalid-feedback">
+                  Please enter short intro in maximum 450 words.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address" class="form-label">Your notes</label>
+                <textarea class="form-control notes-text" id="notes" name="notes" placeholder="Write Book notes here..." autocomplete="off" required></textarea>
+                <button id="boldButton" type="button"><i class="fa-solid fa-bold"></i></button>
+                <button id="italicButton" type="button"><i class="fa-solid fa-italic"></i></button>
+                <button id="underlineButton" type="button"><i class="fa-solid fa-underline"></i></button>
+                <button id="paraButton" type="button">Change Line</button>
+                <button id="hrButton" type="button">Horizontal Barrier Line</button>
+                <div class="invalid-feedback">
+                  Please enter notes in minimum 1000 words.
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="genre" class="form-label">Genre</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Biography" id="biography" name="genre">
+                  <label class="form-check-label" for="biography">Biography</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Fiction" id="fiction" name="genre">
+                  <label class="form-check-label" for="fiction">Fiction</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Finance" id="finance" name="genre">
+                  <label class="form-check-label" for="finance">Finance</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="History" id="history" name="genre">
+                  <label class="form-check-label" for="history">History</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Science" id="science" name="genre">
+                  <label class="form-check-label" for="science">Science</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Self Help" id="selfhelp" name="genre">
+                  <label class="form-check-label" for="selfhelp">Self Help</label>
+                </div>
+                <div class="invalid-feedback">
+                  Please select valid genre.
+                </div>
+              </div>
+              
+              <div class="col-md-6">
+                <label for="rating" class="form-label">Rate this book(out of 10)</label>
+                <input type="number" class="form-control" id="rating" name="rating" min="0.1" max="10" step="0.1" placeholder="E.g. 8" required>
+                <div class="invalid-feedback">
+                  Rating is required and should be in range from 0 to 10.
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-warning btn-lg" type="submit">Add book</button>
+            <button class="w-100 btn btn-secondary btn-lg last-btn" type="button" id="cancel-button">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+<%- include('./partials/footer.ejs') %>
+
+<script src="./js/form.js"></script>

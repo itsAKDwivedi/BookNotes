@@ -1,0 +1,128 @@
+<%- include("partials/header.ejs") %>
+
+<!-- Main Page -->
+
+<main class="container">
+
+  <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary banner">
+      <div class="col-lg-8 px-0 flex banner">
+          <div class="pe-4 pt-4 image">
+              <img src="./resources/placeholder.jpg" alt="Recommended Book" id="image0" class="main-img" loading="lazy">
+          </div>
+          <div>
+              <h1 class="display-5 fst-italic bold"><%= books[idx[0]].name %></h1>
+              <p class="lead my-3"><%- books[idx[0]].intro.substring(0, 120) %>...</p>
+              <p class="lead mb-0"><a href="/view?id=<%= books[idx[0]].id %>" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+          </div>
+      </div>
+  </div>
+
+  <div class="row mb-2">
+      <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                  <h3 class="mb-0"><%= books[idx[1]].name %></h3>
+                  <div class="mb-1 text-body-secondary">By <%= books[idx[1]].author %> (<%= books[idx[1]].rating %>/10)</div>
+                  <p class="card-text mb-auto"><%- books[idx[1]].intro.substring(0, 80) %>...</p>
+                  <a href="/view?id=<%= books[idx[1]].id %>" class="icon-link gap-1 icon-link-hover stretched-link card-link">
+                      Continue reading
+                      <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                  <img src="./resources/placeholder.jpg" id="image1" alt="Featured Book" class="card" loading="lazy">
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                  <h3 class="mb-0"><%= books[idx[2]].name %></h3>
+                  <div class="mb-1 text-body-secondary">By <%= books[idx[2]].author %> (<%= books[idx[2]].rating %>/10)</div>
+                  <p class="card-text mb-auto"><%- books[idx[2]].intro.substring(0, 80) %>...</p>
+                  <a href="/view?id=<%= books[idx[2]].id %>" class="icon-link gap-1 icon-link-hover stretched-link card-link">
+                    Continue reading
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                  <img src="./resources/placeholder.jpg" id="image2" alt="Featured Book" class="card" loading="lazy">
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        For the readers
+      </h3>
+
+      <article class="blog-post">
+        <% books.forEach(function(book){ %>
+          <a href="/view?id=<%= book.id %>" class="list-of-book-link"><h2 class="display-5 link-body-emphasis mb-1"><%= book.name %></h2>
+          <p class="blog-post-meta">by <%= book.author %> (<%= book.rating %>/10.0)</p>
+          <p><%- book.intro %>...</p></a>
+          <a href="/edit?id=<%= book.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a href="/delete?id=<%= book.id %>" class="delete-button"><i class="fa-solid fa-trash"></i></a>
+        <hr><% }) %>
+      </article>
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-body-tertiary rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">Whether you're looking to discover your next read, deepen your understanding of a favorite book, or simply explore new ideas, our platform is your go-to destination for unlocking the wisdom of the written word.</p>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Check these</h4>
+          <ul class="list-unstyled">
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/view?id=<%= books[idx[3]].id %>">
+                <img src="./resources/placeholder.jpg" id="image3" alt="Recommended Book" class="main-img extra" loading="lazy">
+                <div class="col-lg-8">
+                  <h6 class="mb-0"><%= books[idx[3]].name %></h6>
+                  <small class="text-body-secondary"><%= books[idx[3]].author %></small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/view?id=<%= books[idx[4]].id %>">
+                <img src="./resources/placeholder.jpg" id="image4" alt="Recommended Book" class="main-img extra" loading="lazy">
+                <div class="col-lg-8">
+                  <h6 class="mb-0"><%= books[idx[4]].name %></h6>
+                  <small class="text-body-secondary"><%= books[idx[4]].author %></small>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="/view?id=<%= books[idx[5]].id %>">
+                <img src="./resources/placeholder.jpg" id="image5" alt="Recommended Book" class="main-img extra" loading="lazy">
+                <div class="col-lg-8">
+                  <h6 class="mb-0"><%= books[idx[5]].name %></h6>
+                  <small class="text-body-secondary"><%= books[idx[5]].author %></small>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</main>
+
+<%- include("partials/footer.ejs") %>
+
+
+<script src="./js/script.js"></script>

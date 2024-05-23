@@ -1,0 +1,71 @@
+.blog-header-logo {
+    font-family: Amiri, Georgia, "Times New Roman", serif;
+    font-size: 2.25rem; 
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.flex {
+    display: flex;
+}
+
+.main-img{
+    max-height: 270px;
+}
+
+.card{
+    width: 200px;
+    height: 250px;
+}
+
+@media screen and (max-width: 535px) {
+    .banner{
+        display: block; 
+    }
+    .image{
+        padding-bottom: 1.5rem !important;
+        padding-top: -1.5rem !important;
+    }
+}
+
+.card-link > i {
+    transform: translateX(0);
+    transition: transform 0.5s ease-out;
+}
+
+.card-link:hover > i {
+    transform: translateX(4px);
+}
+
+
+.fa-chevron-right{
+    text-decoration: none !important;
+}
+
+.extra{
+    height: 96px;
+    width: 100%;
+}
+
+.footer-container{
+    bottom: 0;
+    min-height: 20px;
+    width: 100%;
+    max-height: fit-content;
+}
+
+.footer-img{
+    height: 25px;
+}
+
+p, .notes-text{
+    text-align: justify;
+}
+
+.list-of-book-link{
+    text-decoration: none;
+    color: black;
+}
