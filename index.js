@@ -1,8 +1,10 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
 import axios from "axios";
+import pkg from 'pg';
 import fs from 'fs';
+
+const { Pool } = pkg;
 
 const app = express();
 const port = 3000;
@@ -15,16 +17,16 @@ let result = [];
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-const db = new pg.Client({
-    user: "postgres",
-    host: "localhost",
-    database: "books",
-    password: "postgres",
-    port: 5432,
-});
-
-db.connect();
-
+const db = new Pool({
+    user: "koyeb-adm",
+    host: "ep-wild-lake-a28340v9.eu-central-1.pg.koyeb.app",
+    database: "koyebdb",
+    password: "MO2YXkrZA9BG",
+    port: 5432, // Default PostgreSQL port
+    ssl: {
+      rejectUnauthorized: false // Disable SSL certificate validation (for development purposes only)
+    }
+  });
 
 
 //Backend functions
