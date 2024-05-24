@@ -49,7 +49,7 @@ To run the Book Notes Website locally on your machine, follow these steps:
 - Express.js
 - PostgreSQL
 - HTML, CSS, JavaScript (Frontend)
-- Other dependencies (list any additional libraries or frameworks used)
+- Bootstrap
 
 ## Contributing
 
