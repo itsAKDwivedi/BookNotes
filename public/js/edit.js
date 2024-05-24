@@ -12,7 +12,9 @@ fetch(`/api/new-img?isbn=${isbn}`)
         console.error('Error fetching image URL:', error);
     });
 
-
+document.querySelector('#cancel-button').addEventListener('click', () => {
+      window.location.href = '/';
+    });
 
 
       
